@@ -1,0 +1,16 @@
+name: My Test Workflow
+
+on: [push]
+
+
+jobs:
+  runs-on: ubuntu-latest
+  steps: 
+    - name: Check out this repo
+      uses: action/checkout@v3
+
+    - name: install dependencies
+      run: sudo apt install -y build-essential
+
+    -name: Run Test
+      run: 
