@@ -1,5 +1,6 @@
 name: My Test Workflow
-
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 on:
   push:
     branches: [ "main" ]
@@ -18,3 +19,6 @@ jobs:
 
       - name: Run Test
         run: docker compose up --build
+
+      - name: Show application logs
+        run: docker compose logs
