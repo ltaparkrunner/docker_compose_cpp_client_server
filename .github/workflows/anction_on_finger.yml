@@ -4,13 +4,14 @@ on:
   workflow_dispatch:
   
 jobs:
-  runs-on: ubuntu-latest
-  steps: 
-    - name: Check out this repo
-      uses: action/checkout@v3
+  test:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Check out this repo
+        uses: action/checkout@v3
 
-    - name: install dependencies
-      run: sudo apt install -y build-essential
+      - name: install dependencies
+        run: sudo apt install -y build-essential
 
-    -name: Run Test
-      run: 
+      - name: Run Test
+        run: docker-compose up -d --build
